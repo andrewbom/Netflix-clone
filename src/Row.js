@@ -36,7 +36,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     } else {
       // movieTrailer is a npm module to RETURN the trailer URL by searching the movie's name
       // little protection here just in case the name is not defined properly
-      movieTrailer(movie?.name || "")
+      movieTrailer(movie?.name || movie?.title || movie?.original_name || "")
         .then((url) => {
           /* this is extracting the videoID from an url
           e.g. https://www.youtube.com/watch?v=XtMThy8QKqU&t
